@@ -1,5 +1,6 @@
 # Idea's files and folders
 .idea/
+../.idea/
 .idea_modules/
 .build/
 .gradle/
@@ -24,6 +25,7 @@ out/
 *.iml
 gradle*
 settings.gradle
+
 
 # Ignore Gradle GUI config
 gradle-app.setting

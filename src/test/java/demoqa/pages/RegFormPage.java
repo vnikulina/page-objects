@@ -1,9 +1,7 @@
 package demoqa.pages;
 
-
 import com.codeborne.selenide.SelenideElement;
 import demoqa.pages.components.CalendarComponent;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -24,7 +22,9 @@ public class RegFormPage {
             selectPicture = $("#uploadPicture"),
             userAddressInput = $("#currentAddress"),
             listOfStates = $(byText("Select State")),
-            listOfCities = $(byText("Select City"));
+            listOfCities = $(byText("Select City")),
+            btnSubmit = $("#submit"),
+            resultFormTitle = $("#example-modal-sizes-title-lg");
 
 
     // actions
@@ -97,6 +97,16 @@ public class RegFormPage {
     public RegFormPage setCity(String city) {
         listOfCities.click();
         $(byText(city)).click();
+        return this;
+    }
+
+    public RegFormPage clickSubmit() {
+        btnSubmit.click();
+        return this;
+    }
+
+    public RegFormPage hasCorrectHeader(String headerText) {
+        resultFormTitle.shouldHave(text(headerText));
         return this;
     }
 

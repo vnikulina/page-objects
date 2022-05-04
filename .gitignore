@@ -1,5 +1,6 @@
 # Idea's files and folders
 /.idea
+/idea
 .idea_modules
 /build
 /.gradle
